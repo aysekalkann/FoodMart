@@ -1,0 +1,34 @@
+﻿@model List<FoodMartMongo.Dtos.DiscountDtos.ResultDiscountDto>
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+<div class="container">
+    <br /><br />
+    <table class="table table-striped table-hover table-bordered">
+        <tr>
+        <th>#</th>
+        <th>Başlık</th>
+        <th>Alt Başlık</th>
+        <th>Açıklama</th>
+        <th>Resim</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+        </tr>
+        @foreach(var item in Model)
+        {
+            <tr>
+                <td>@item.DiscountId</td>
+                <td>@item.Title</td>
+                <td>@item.SubTitle</td>
+                <td>@item.Description</td>
+                <td>@item.ImageUrl</td>
+                <td><a href="/Discount/DeleteDiscount/@item.DiscountId" class="btn btn-danger">Sil</a></td>
+                <td><a href="/Discount/UpdateDiscount/@item.DiscountId" class="btn btn-success">Güncelle</a></td>
+            </tr>
+        }
+    </table>
+    <a href="/Discount/CreateDiscount/" class="btn btn-primary">Yeni İndirim Girişi</a>
+
+</div>

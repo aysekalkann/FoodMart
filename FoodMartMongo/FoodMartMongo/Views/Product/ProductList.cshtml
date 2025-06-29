@@ -1,0 +1,35 @@
+﻿@model List<FoodMartMongo.Dtos.ProductDto.ProductWithCategoryDto> 
+
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+<div class="container">
+    <br /><br />
+    <table class="table table-striped table-hover table-bordered">
+        <tr>
+        <th>#</th>
+        <th>Ürün Adı</th>
+        <th>Ürün Stok</th>
+        <th>Ürün Fiyatı</th>
+        <th>Ürün Kategorisi</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+        </tr>
+        @foreach(var item in Model)
+        {
+            <tr>
+                <td>@item.Product.ProductId</td>
+                <td>@item.Product.Name</td>
+                <td>@item.Product.StockCount</td>
+                <td>@item.Product.Price</td>
+                <td>@item.CategoryName</td>
+                <td><a href="/Product/DeleteProduct/@item.Product.ProductId" class="btn btn-danger">Sil</a></td>
+                <td><a href="/Product/UpdateProduct/@item.Product.ProductId" class="btn btn-success">Güncelle</a></td>
+            </tr>
+        }
+    </table>
+    <a href="/Product/CreateProduct/" class="btn btn-primary">Yeni Ürün Girişi</a>
+
+</div>

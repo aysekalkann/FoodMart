@@ -1,0 +1,19 @@
+﻿@model FoodMartMongo.Dtos.PeopleLookingDtos.CreatePeopleLookingDto
+@{
+    Layout = null;
+}
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+<div class="container">
+    <br />
+    <br />
+    <h3 class="alert alert-primary">Yeni Öne Çıkan Başlık Ekleme Sayfası</h3>
+    <form method="post">
+        <label>Başlık</label>
+        <input type="text" asp-for="Title" class="form-control" />
+        <br />
+        <button class="btn btn-info">Öne Çıkan Başlık Ekle</button>
+
+    </form>
+
+</div>

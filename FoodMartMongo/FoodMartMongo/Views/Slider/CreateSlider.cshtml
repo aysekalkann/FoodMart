@@ -1,0 +1,28 @@
+﻿@model FoodMartMongo.Dtos.SliderDtos.CreateSliderDto
+@{
+    Layout = null;
+}
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+<div class="container">
+    <br />
+    <br />
+    <h3 class="alert alert-primary">Yeni Slider Ekleme Sayfası</h3>
+    <form method="post">
+        <label> Başlık</label>
+        <input type="text" asp-for="Title" class="form-control" />
+        <br />
+         <label>Alt Başlık</label>
+        <input type="text" asp-for="SubTitle" class="form-control" />
+        <br />
+         <label> Açıklama</label>
+        <input type="text" asp-for="Description" class="form-control" />
+        <br />
+         <label> Resim</label>
+        <input type="text" asp-for="ImageUrl" class="form-control" />
+        <br />
+        <button class="btn btn-info">Slider Ekle</button>
+
+    </form>
+
+</div>

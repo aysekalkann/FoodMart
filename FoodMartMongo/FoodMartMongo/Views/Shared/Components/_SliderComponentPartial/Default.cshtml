@@ -1,0 +1,55 @@
+﻿@model List<FoodMartMongo.Dtos.SliderDtos.ResultSliderDto>
+
+<section class="py-5">
+    <div class="container-fluid">
+        <div class="row g-4">
+
+            <!-- SOL: SLIDER -->
+            <div class="col-lg-8">
+                <div class="swiper main-swiper rounded-4 overflow-hidden">
+                    <div class="swiper-wrapper">
+                        @foreach (var item in Model)
+                        {
+                            <div class="swiper-slide p-5" style="background-color: #e9f5fb;">
+                                <div class="row align-items-center">
+                                    <div class="col-md-6">
+                                        <div class="text-warning fw-bold fs-5 mb-2">@item.SubTitle</div>
+                                        <h2 class="display-6 fw-bold">@item.Title</h2>
+                                        <p class="text-muted">@item.Description</p>
+                                        <a href="#" class="btn btn-outline-dark rounded-1 mt-3 px-4 py-2">SHOP NOW</a>
+                                    </div>
+                                    <div class="col-md-6 text-center">
+                                        <img src="@item.ImageUrl" class="img-fluid" style="max-height: 280px;" />
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                    <div class="swiper-pagination mt-3"></div>
+                </div>
+            </div>
+
+            <!-- SAĞ: KAMPANYALAR -->
+            <div class="col-lg-4 d-flex flex-column justify-content-between">
+                <!-- ÜST KAMPANYA -->
+                <div class="p-4 rounded-4 mb-3 text-dark"
+                     style="background: url('/FoodMart-1.0.0/images/ad-image-1.png') no-repeat right bottom;
+                            background-size: contain; background-color: #e8f6e8; min-height: 180px;">
+                    <div class="text-muted small">%20 İndirim</div>
+                    <h5 class="mt-2 fw-bold">Meyve & Sebze</h5>
+                    <a href="#" class="text-decoration-none mt-2 d-inline-block">Alışverişe Başla →</a>
+                </div>
+
+                <!-- ALT KAMPANYA -->
+                <div class="p-4 rounded-4 text-dark"
+                     style="background: url('/FoodMart-1.0.0/images/ad-image-2.png') no-repeat right bottom;
+                            background-size: contain; background-color: #fff3ee; min-height: 180px;">
+                    <div class="text-muted small">%15 İndirim</div>
+                    <h5 class="mt-2 fw-bold">Fırın </h5>
+                    <a href="#" class="text-decoration-none mt-2 d-inline-block">Alışverişe Başla →</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>

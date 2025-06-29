@@ -1,0 +1,62 @@
+﻿@using FoodMartMongo.Dtos.CategoryDtos
+@model List<ResultCategoryDto>
+
+@section Scripts {
+    <script>
+        new Swiper('.category-carousel', {
+            slidesPerView: 5,
+            spaceBetween: 20,
+            navigation: {
+                nextEl: '.category-carousel-next',
+                prevEl: '.category-carousel-prev'
+            },
+            breakpoints: {
+                0: { slidesPerView: 2 },
+                576: { slidesPerView: 3 },
+                768: { slidesPerView: 4 },
+                992: { slidesPerView: 5 }
+            }
+        });
+    </script>
+}
+
+<section class="py-5 overflow-hidden">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+
+                <div class="section-header d-flex flex-wrap justify-content-between mb-5">
+                    <h2 class="section-title">Kategori</h2>
+
+                    <div class="d-flex align-items-center">
+                        <a href="#" class="btn-link text-decoration-none">Tüm Kategoriler →</a>
+                        <div class="swiper-buttons">
+                            <button class="swiper-prev category-carousel-prev btn btn-yellow">❮</button>
+                            <button class="swiper-next category-carousel-next btn btn-yellow">❯</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+
+                <div class="category-carousel swiper">
+                    <div class="swiper-wrapper">
+                        @foreach (var item in Model)
+                        {
+                            <a href="#" class="nav-link category-item swiper-slide text-center">
+                                <img src="@item.IconUrl" alt="@item.CategoryName"
+                                     class="img-fluid d-block mx-auto mb-2"
+                                     style="width: 60px; height: 60px;" />
+                                <h3 class="category-title h6">@item.CategoryName</h3>
+                            </a>
+                        }
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>

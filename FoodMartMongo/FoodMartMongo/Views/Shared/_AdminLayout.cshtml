@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Admin Paneli</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="/quixlab-master/images/favicon.png">
+
+    <!-- Quixlab CSS -->
+    <link href="/quixlab-master/css/style.css" rel="stylesheet" />
+
+    <!-- Iconlar -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" />
+
+    @RenderSection("Styles", required: false)
+
+    <style>
+        .mail-list a:hover {
+            background-color: #f4f4f4;
+        }
+        .mail-list {
+            padding: 10px 15px;
+            background-color: #f9f9f9;
+            min-height: 100vh; /* Tam yükseklik */
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <!-- ANA KAPSAYICI: Menü + İçerik Yan Yana -->
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sol MENÜ -->
+            <nav class="col-md-3 col-lg-2 p-0 bg-light">
+                <div class="mail-list mt-4">
+                    <a href="/Category/CategoryList" class="list-group-item border-0 p-r-0">
+                        <i class="fa fa-inbox font-18 align-middle mr-2"></i> Kategorilerim
+                    </a>
+                    <a href="/Product/ProductList" class="list-group-item border-0 text-primary p-r-0">
+                        <i class="fa fa-inbox font-18 align-middle mr-2"></i> <strong>Tüm Ürünler</strong>
+                        <span class="badge badge-primary badge-sm float-right mt-1"></span>
+                    </a>
+                    <a href="/Discount/DiscountList" class="list-group-item border-0 p-r-0">
+                        <i class="fa fa-paper-plane font-18 align-middle mr-2"></i> İndirimler
+                        <span class="badge badge-primary badge-sm float-right mt-1"></span>
+                    </a>
+                    <a href="/PeopleLooking/PeopleLookingList" class="list-group-item border-0 p-r-0">
+                        <i class="fa fa-eye font-18 align-middle mr-2"></i> İnsanlar Bunları da Arıyor
+                    </a>
+                    <a href="/User/Login" class="list-group-item border-0 p-r-0">
+                        <i class="mdi mdi-logout font-18 align-middle mr-2"></i> Çıkış Yap
+                    </a>
+                </div>
+            </nav>
+
+            <!-- Sağ İÇERİK -->
+            <main class="col-md-9 col-lg-10 mt-4">
+                @RenderBody()
+            </main>
+        </div>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script src="/quixlab-master/plugins/common/common.min.js"></script>
+    <script src="/quixlab-master/js/custom.min.js"></script>
+    <script src="/quixlab-master/js/settings.js"></script>
+    <script src="/quixlab-master/js/gleek.js"></script>
+    <script src="/quixlab-master/js/styleSwitcher.js"></script>
+
+    @RenderSection("Scripts", required: false)
+
+</body>
+</html>

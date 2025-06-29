@@ -1,0 +1,28 @@
+﻿@model List<FoodMartMongo.Dtos.PeopleLookingDtos.ResultPeopleLookingDto>
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+<div class="container">
+    <br /><br />
+    <table class="table table-striped table-hover table-bordered">
+        <tr>
+        <th>#</th>
+        <th>Başlık</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+        </tr>
+        @foreach(var item in Model)
+        {
+            <tr>
+                <td>@item.PeopleLookingId</td>
+                <td>@item.Title</td>
+                <td><a href="/PeopleLooking/DeletePeopleLooking/@item.PeopleLookingId" class="btn btn-danger">Sil</a></td>
+                <td><a href="/PeopleLooking/UpdatePeopleLooking/@item.PeopleLookingId" class="btn btn-success">Güncelle</a></td>
+            </tr>
+        }
+    </table>
+    <a href="/PeopleLooking/CreatePeopleLooking/" class="btn btn-primary">Yeni Öne Çıkan Başlık Girişi</a>
+
+</div>
